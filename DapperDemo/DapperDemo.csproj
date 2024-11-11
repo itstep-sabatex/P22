@@ -8,11 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-    <PackageReference Include="System.Data.SQLite" Version="1.0.119" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Cafe.Models\Cafe.Models.csproj" />
   </ItemGroup>
 

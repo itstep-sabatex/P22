@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADONETWPFDemo", "ADONETWPFD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADO-NET", "ADO-NET", "{E9D4B3D0-85A8-4D23-84AF-7B8DE01EAC9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperDemo", "DapperDemo\DapperDemo.csproj", "{053C7854-6E36-4BC5-960A-987324FF46D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe.Models", "Cafe.Models\Cafe.Models.csproj", "{486D6248-860F-41A5-B31B-D38932B9A933}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{DE1FBAD2-D2EC-419E-9579-D90133DCE5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE1FBAD2-D2EC-419E-9579-D90133DCE5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE1FBAD2-D2EC-419E-9579-D90133DCE5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{053C7854-6E36-4BC5-960A-987324FF46D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053C7854-6E36-4BC5-960A-987324FF46D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053C7854-6E36-4BC5-960A-987324FF46D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053C7854-6E36-4BC5-960A-987324FF46D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{486D6248-860F-41A5-B31B-D38932B9A933}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486D6248-860F-41A5-B31B-D38932B9A933}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486D6248-860F-41A5-B31B-D38932B9A933}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486D6248-860F-41A5-B31B-D38932B9A933}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

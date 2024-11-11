@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using ADONETWPFDemo;
+
+using Cafe.Models;
 using System.Data;
 
 Console.WriteLine("Hello, World!");
@@ -7,7 +8,6 @@ Console.WriteLine("Hello, World!");
 // NET 2.0,3.0,4.0,4.8- несумісні (5.0,6.0,7.0,8.0)
 // Net Core 1.0,2.0,3.0,3.1,3.2 (5.0,6.0,7.0,8.0)
 
-<<<<<<< HEAD
 var str = File.ReadAllText("E:/MOCK_DATA.json");
 var data = System.Text.Json.JsonSerializer.Deserialize<Waiter[]>(str);
 
@@ -18,7 +18,7 @@ using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("Dat
     dbConnection.Open();
 
     var tr = dbConnection.BeginTransaction();
-   // var dbCommand = dbConnection.CreateCommand();
+    // var dbCommand = dbConnection.CreateCommand();
     //dbCommand.Transaction = tr;
     //dbCommand.CommandText = "insert into Waiters (name,password,birthday) values (@name, @password,@birthday)";
     //var parName = dbCommand.CreateParameter();
@@ -42,9 +42,9 @@ using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("Dat
             var parBirthday = dbCommand.CreateParameter();
             parBirthday.ParameterName = "birthday";
 
-            parName.Value = item.name;
-            parPassword.Value = item.password;
-            parBirthday.Value = item.birthday;
+            parName.Value = item.Name;
+            parPassword.Value = item.Password;
+            parBirthday.Value = item.Birthday;
             dbCommand.Parameters.Add(parName);
             dbCommand.Parameters.Add(parPassword);
             dbCommand.Parameters.Add(parBirthday);
@@ -59,7 +59,7 @@ using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("Dat
         Console.WriteLine($"Error:{ex.Message} Rollback");
     }
 
-   
+
 
 
     var dbCommand1 = dbConnection.CreateCommand();
@@ -70,11 +70,5 @@ using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("Dat
         Console.WriteLine($"{dbReader.GetInt32(0)} {dbReader.GetString(1)} {dbReader.GetString(2)} {dbReader.GetString(3)}");
     }
 
-=======
-using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("DataSource=C:/Users/serhi/.databases/cafe.db"))
-{
-    dbConnection.Open();
->>>>>>> a8b5e6a5ac4cae20817a052f4a9c610eb5bca60a
-    dbConnection.Close();
 
 }

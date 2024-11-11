@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Cafe.Models;
+using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
