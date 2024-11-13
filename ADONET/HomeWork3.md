@@ -1,5 +1,4 @@
 # HomeWork 3 (EF Core)
 
-- Використовуючи в якості базового проекту результат [попередньої роботи](https://github.com/itstep-sabatex/P22/blob/master/ADONET/HomeWork2.md), замінити Dapper на EF Core.
-- Створити класи для для всіх таблиць з [cafe.db](https://github.com/itstep-sabatex/P22/blob/master/cafe.db) окрім __EFMigrationsHistory.
-
+- Р’РёРєРѕСЂРёСЃС‚РѕРІСѓСЋС‡Рё РІ СЏРєРѕСЃС‚С– Р±Р°Р·РѕРІРѕРіРѕ РїСЂРѕРµРєС‚Сѓ СЂРµР·СѓР»СЊС‚Р°С‚ [РїРѕРїРµСЂРµРґРЅСЊРѕС— СЂРѕР±РѕС‚Рё](https://github.com/itstep-sabatex/P22/blob/master/ADONET/HomeWork2.md), Р·Р°РјС–РЅРёС‚Рё Dapper РЅР° EF Core.
+- РЎС‚РІРѕСЂРёС‚Рё РєР»Р°СЃРё РґР»СЏ РґР»СЏ РІСЃС–С… С‚Р°Р±Р»РёС†СЊ Р· [cafe.db](https://github.com/itstep-sabatex/P22/blob/master/cafe.db) РѕРєСЂС–Рј __EFMigrationsHistory.
