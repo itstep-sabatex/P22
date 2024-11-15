@@ -52,9 +52,9 @@ using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("Dat
     //}
 
 
-    var result = dbConnection.Query<Waiter>("select * from Waiters where id=@id",new {id=10}).Where(s=>s.Name.Length <5);
+    var result = dbConnection.Query<User>("select * from Waiters where id=@id",new {id=10}).Where(s=>s.Name.Length <5);
 
-    foreach (Waiter waiter in result)
+    foreach (User waiter in result)
     {
         Console.WriteLine($"{waiter.Id} {waiter.Name} {waiter.Password} {waiter.Birthday}");
     }

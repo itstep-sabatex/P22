@@ -18,11 +18,11 @@ namespace ADONETWPFDemo
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Waiter> waiters;
+        List<User> waiters;
         public MainWindow()
         {
             InitializeComponent();
-            waiters = new List<Waiter>();
+            waiters = new List<User>();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -32,7 +32,7 @@ namespace ADONETWPFDemo
                 dbConnection.Open();
                 waiters.Clear();
 
-                waiters.Add(new Waiter { Id = 1, Name = "Tester", Password = "******", Birthday = new DateTime(2000, 5, 1) });
+                waiters.Add(new User { Id = 1, Name = "Tester", Password = "******", Birthday = new DateTime(2000, 5, 1) });
                 dg.ItemsSource = waiters;
 
                 var dbCommand = dbConnection.CreateCommand();
