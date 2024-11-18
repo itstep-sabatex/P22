@@ -1,5 +1,6 @@
 ﻿using Cafe.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,8 +18,12 @@ namespace EFCore_Demo
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlite("DataSource=C:/Users/serhi/.databases/itstep/cafe-demo-1.db");
+            optionsBuilder.UseSqlite(Configuration.GetConnectionString("SQLIte"));
         }
+        public static IConfiguration Configuration = new ConfigurationBuilder()
+      .SetBasePath(Directory.GetCurrentDirectory())
+      .AddJsonFile("appsettings.json")
+      .AddUserSecrets<Program>().Build();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
