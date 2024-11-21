@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using Cafe.Models;
+using Microsoft.Data.Sqlite;
 using System.Data;
 
 Console.WriteLine("Hello, World!");
@@ -13,7 +14,7 @@ var data = System.Text.Json.JsonSerializer.Deserialize<User[]>(str);
 
 
 
-using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("DataSource=C:/Users/serhi/.databases/itstep/cafe.db"))
+using (IDbConnection dbConnection = new SqliteConnection("DataSource=C:/Users/serhi/.databases/itstep/cafe.db"))
 {
     dbConnection.Open();
 

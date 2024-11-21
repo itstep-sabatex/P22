@@ -1,4 +1,5 @@
 ﻿using Cafe.Models;
+using Microsoft.Data.Sqlite;
 using System.Data;
 using System.Text;
 using System.Windows;
@@ -27,7 +28,7 @@ namespace ADONETWPFDemo
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("DataSource=C:/Users/serhi/.databases/itstep/cafe.db"))
+            using (IDbConnection dbConnection = new SqliteConnection("DataSource=C:/Users/serhi/.databases/itstep/cafe.db"))
             {
                 dbConnection.Open();
                 waiters.Clear();

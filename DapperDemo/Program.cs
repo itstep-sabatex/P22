@@ -3,9 +3,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Data;
 using Dapper;
 using Cafe.Models;
+using Microsoft.Data.Sqlite;
 
 Console.WriteLine("Hello, World!");
-using (IDbConnection dbConnection = new System.Data.SQLite.SQLiteConnection("DataSource=C:/Users/serhi/.databases/itstep/cafe.db"))
+using (IDbConnection dbConnection = new SqliteConnection("DataSource=C:/Users/serhi/.databases/itstep/cafe.db"))
 {
     //dbConnection.Open();
 
