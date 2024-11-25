@@ -1,0 +1,38 @@
+﻿using Cafe.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+
+namespace Cafe.Data
+{
+    public abstract class CafeDbContext : DbContext
+    {
+        public DbSet<User> Users { get; set; }
+        public DbSet<ClientTable> ClientTables { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Nomenclature> Nomenclatures { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
+        public CafeDbContext()
+        {
+            
+        }
+
+        public CafeDbContext(DbContextOptions options):base(options)
+        {
+            
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Role>().HasData(new Role[] { Role.Admin, Role.Manager, Role.Waiter });
+            modelBuilder.Entity<User>().HasData(new User[] { User.Admin });
+            modelBuilder.Entity<UserRole>().HasData(new UserRole[] { new UserRole { Id = 1, UserId = User.Admin.Id, RoleId = Role.Admin.Id } });
+
+        }
+ 
+    }
+}

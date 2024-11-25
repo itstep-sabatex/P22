@@ -1,6 +1,8 @@
 ﻿using Cafe.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +20,23 @@ namespace EFCore_Demo
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+            optionsBuilder.LogTo(Console.WriteLine);
+            //Action<String> action;
+            //Func<string> func;
             optionsBuilder.UseSqlite(Configuration.GetConnectionString("SQLIte"));
+            optionsBuilder.UseLoggerFactory(loggerFactory).EnableSensitiveDataLogging(true);
+
         }
         public static IConfiguration Configuration = new ConfigurationBuilder()
       .SetBasePath(Directory.GetCurrentDirectory())
       .AddJsonFile("appsettings.json")
       .AddUserSecrets<Program>().Build();
-
+        public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder => 
+        {
+            builder.AddConsole();
+            builder.AddDebug();
+            builder.SetMinimumLevel(LogLevel.Trace);
+       }); 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

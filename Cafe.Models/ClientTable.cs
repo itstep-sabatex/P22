@@ -10,5 +10,10 @@ namespace Cafe.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public static ClientTable Table1 => new ClientTable { Id = 2, Name = "Столик 1" };
+        public static ClientTable Table2 => new ClientTable { Id = 3, Name = "Столик 2" };
+        public static ClientTable Table3 => new ClientTable { Id = 1, Name = "Столик біля вікна" };
+
+
     }
 }
