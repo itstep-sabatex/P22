@@ -10,6 +10,9 @@
 
         public static User Admin => new User { Id = 1,Name="admin",Password="12345"};
         public static User Waiter => new User { Id = 2, Name = "Waiter", Password = "12345", Birthday = DateTime.Parse("01.01.2000")};
+        public static User Manager => new User { Id = 3, Name = "Manager", Password = "12345", Birthday = DateTime.Parse("01.01.2000")};
+        public static User Barmen => new User { Id = 4, Name = "Barmen", Password = "12345", Birthday = DateTime.Parse("01.01.2000") };
+        public static User Cook => new User { Id = 5, Name = "Cook", Password = "12345", Birthday = DateTime.Parse("01.01.2000") };
 
 
     }

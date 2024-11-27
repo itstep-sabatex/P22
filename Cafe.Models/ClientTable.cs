@@ -14,6 +14,11 @@ namespace Cafe.Models
         public static ClientTable Table2 => new ClientTable { Id = 3, Name = "Столик 2" };
         public static ClientTable Table3 => new ClientTable { Id = 1, Name = "Столик біля вікна" };
 
-
+        public static IEnumerable<ClientTable> DefaultClientTables()
+        {
+            yield return Table1;
+            yield return Table2;
+            yield return Table3;
+        }
     }
 }

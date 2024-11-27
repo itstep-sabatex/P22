@@ -38,7 +38,7 @@ namespace Cafe
                 //var data2 = context.Orders.Include(s=>s.ClientTable).Include(d=>d.Details).Where(s => s.UserId == Config.UserId).Select(sl=>new MainWindowViewModelR(sl.Id, sl.ClientTable.Name, sl.Date.ToString("H:mm:ss"),sl.Details.Sum(sum=>sum.Sum), sl.Bill)).ToArray();
 
 
-                dataGrid.ItemsSource = data;
+                 dataGrid.ItemsSource = data;
             }
         }
         private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -68,14 +68,30 @@ namespace Cafe
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
 
-
+ 
             //var options = new DbContextOptionsBuilder();
             //options.UseSqlite(Configuration.GetConnectionString("SQLIte"));
             //using (CafeDbContext context = GetDbContext()) 
             //{ 
             //}
         }
+
+        void CloseFrames()
+        {
+            MainFrame.Visibility = Visibility.Collapsed;
+        }
+
+
+        private void NomenclatureItemsFrame_Click(object sender, RoutedEventArgs e)
+        {
+            NomenclatureItemsFrame.Visibility = Visibility.Visible;
+            NomenclatureItemsFrame.Refresh();
+        }
     }
+
+
+
+
+
 }

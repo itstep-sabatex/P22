@@ -29,8 +29,12 @@ namespace Cafe.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Role>().HasData(new Role[] { Role.Admin, Role.Manager, Role.Waiter });
-            modelBuilder.Entity<User>().HasData(new User[] { User.Admin });
+            modelBuilder.Entity<User>().HasData(new User[] { User.Admin,User.Waiter,User.Manager,User.Barmen,User.Cook });
             modelBuilder.Entity<UserRole>().HasData(new UserRole[] { new UserRole { Id = 1, UserId = User.Admin.Id, RoleId = Role.Admin.Id } });
+            modelBuilder.Entity<ClientTable>().HasData(ClientTable.DefaultClientTables());
+            modelBuilder.Entity<Nomenclature>().HasData(Nomenclature.DefaultNomenclatures());
+            modelBuilder.Entity<Order>().HasData(Order.DefaultOrders());
+            modelBuilder.Entity<OrderDetail>().HasData(OrderDetail.Defaults());
 
         }
  

@@ -9,7 +9,14 @@
     <Grid>
         <local:Login Visibility="Visible" x:Name="LoginFrame" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="Black" Background="AliceBlue" />
         <Grid x:Name="MainFrame" Visibility="Collapsed">
-            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" MouseDoubleClick="dataGrid_MouseDoubleClick" IsReadOnly="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Button Click="NomenclatureItemsFrame_Click">Номенклатура</Button>
+            </StackPanel>
+            <DataGrid Grid.Row="1" x:Name="dataGrid" AutoGenerateColumns="False" MouseDoubleClick="dataGrid_MouseDoubleClick" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Час замовлення" Binding="{Binding Time_order}" Width="Auto"/>
                     <DataGridTextColumn Header="Столик" Binding="{Binding Abonent}" Width="*"/>
@@ -18,6 +25,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-
+        <local:NomenclatureItems Visibility="Collapsed" x:Name="NomenclatureItemsFrame"/>
+        <local:NomenclatureEdit Visibility="Collapsed" x:Name="NomenclatureEditFrame" />
     </Grid>
 </Window>
