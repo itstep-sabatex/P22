@@ -31,6 +31,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cafe", "ADONET\Cafe\Cafe.csproj", "{DE1D74EB-9DF9-4E8D-9B5D-E8FAF6E8CC15}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SYSTEMProg", "SYSTEMProg", "{96AC5DF7-4BDF-405D-BBBE-A24A5A936445}"
+	ProjectSection(SolutionItems) = preProject
+		DZ thread.md = DZ thread.md
+		DZ Thread.txt = DZ Thread.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "system_prog", "SystemProg\system_prog\system_prog.csproj", "{9B238698-F25C-4725-ACE4-E7AF39B92635}"
 EndProject
