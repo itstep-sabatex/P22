@@ -1,8 +1,8 @@
 ﻿namespace MatrixLib
 {
-    public class Matrix
+    public static class Matrix
     {
-        public double[,] CreateMatrix(int dimension)
+        public static double[,] CreateMatrix(int dimension)
         {
             var result = new double[dimension, dimension];
             for (int i = 0; i < dimension; i++)
@@ -15,7 +15,7 @@
             return result;
         }
 
-        public void MultiplreOneElement(object? param)
+        public static void MultiplreOneElement(object? param)
         {
             if (param == null)
                 throw new ArgumentNullException(nameof(param));
@@ -28,6 +28,20 @@
             matrixParams.c[matrixParams.i, matrixParams.j] = result;
         }
 
+        public static double[,] MultipleMatrix(int dim, double[,] a, double[,] b, Action<int> progress)
+        {
+            var result = new double[dim, dim];
+            for (int i = 0; i < dim; i++)
+            {
+                progress?.Invoke(i);
+                for (int j = 0; j < dim; j++)
+                {
+                    MultiplreOneElement(new MatrixParams(dim, i, j, a, b, result, null));
+                }
+            }
+            return result;
 
+
+        }
     }
 }
