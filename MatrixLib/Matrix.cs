@@ -27,6 +27,24 @@
             }
             matrixParams.c[matrixParams.i, matrixParams.j] = result;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="dim"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static double MultiplreOneElement(int dim, int i, int j, double[,] a, double[,] b)
+        {
+            double result = 0;
+            for (int mi = 0; mi < dim; mi++)
+            {
+                result = result + a[i, mi] * b[mi, j];
+            }
+            return result;
+        }
 
         public static double[,] MultipleMatrix(int dim, double[,] a, double[,] b, Action<int> progress)
         {
