@@ -45,7 +45,35 @@
             }
             return result;
         }
+        /// <summary>
+        /// демонстрація поганої реалізації асинхронного методу (метод по своїй природі синхронний)
+        /// </summary>
+        /// <param name="dim"></param>
+        /// <param name="i"></param>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static async Task<double> MultiplreOneElementAsync(int dim, int i, int j, double[,] a, double[,] b)
+        {
+            double result = 0;
+            for (int mi = 0; mi < dim; mi++)
+            {
+                result = result + a[i, mi] * b[mi, j];
+            }
+            await Task.Yield();
+            return result;
+        }
 
+        public static Task<double> MultiplreOneElementTask(int dim, int i, int j, double[,] a, double[,] b)
+        {
+            double result = 0;
+            for (int mi = 0; mi < dim; mi++)
+            {
+                result = result + a[i, mi] * b[mi, j];
+            }
+            return Task.FromResult(result);
+        }
         public static double[,] MultipleMatrix(int dim, double[,] a, double[,] b, Action<int> progress)
         {
             var result = new double[dim, dim];

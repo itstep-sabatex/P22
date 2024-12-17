@@ -55,6 +55,7 @@ for (int i = 0; i < 1000; i++)
         var pi = i;
         var pj = j;
         tasks[i, j] = Task.Run(()=>MatrixLib.Matrix.MultiplreOneElement(1000, pi, pj, ma, mc));
+        tasks[i, j] = MatrixLib.Matrix.MultiplreOneElementTask(1000, pi, pj, ma, mc);
     }
 }
 var result = new double[1000, 1000];
