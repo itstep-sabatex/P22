@@ -54,6 +54,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "async-await-demo", "SystemP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorDemo", "SystemProg\MonitorDemo\MonitorDemo.csproj", "{BEAE1241-FC9D-4801-AD9E-AD2D61DCE127}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutexDemo", "MutexDemo\MutexDemo.csproj", "{E9E7D690-3ABD-4E7D-B480-B3F88DB7501A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{BEAE1241-FC9D-4801-AD9E-AD2D61DCE127}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEAE1241-FC9D-4801-AD9E-AD2D61DCE127}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEAE1241-FC9D-4801-AD9E-AD2D61DCE127}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9E7D690-3ABD-4E7D-B480-B3F88DB7501A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9E7D690-3ABD-4E7D-B480-B3F88DB7501A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9E7D690-3ABD-4E7D-B480-B3F88DB7501A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9E7D690-3ABD-4E7D-B480-B3F88DB7501A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +162,7 @@ Global
 		{A218AEF4-4640-41BC-AAC8-E59AA93FF7B1} = {96AC5DF7-4BDF-405D-BBBE-A24A5A936445}
 		{25B6F260-1752-4E90-A07B-41A3AF2521CC} = {96AC5DF7-4BDF-405D-BBBE-A24A5A936445}
 		{BEAE1241-FC9D-4801-AD9E-AD2D61DCE127} = {96AC5DF7-4BDF-405D-BBBE-A24A5A936445}
+		{E9E7D690-3ABD-4E7D-B480-B3F88DB7501A} = {96AC5DF7-4BDF-405D-BBBE-A24A5A936445}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {109A5F9F-CFCA-4BBA-815F-3736EEF254CA}
