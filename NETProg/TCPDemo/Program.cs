@@ -13,25 +13,29 @@ var server = Task.Run(() =>
     {
         Console.WriteLine("Waiting for connection...");
         var tcpClient = tcpListener.AcceptTcpClient();
-
-
-
-        Console.WriteLine("Connected");
-        var stream = tcpClient.GetStream();
-        var buffer = new byte[1024];
-        var data = new StringBuilder();
-        int bytes = 0;
-        do
+        Task.Run(() => 
         {
-            bytes = stream.Read(buffer, 0, buffer.Length);
-            data.Append(Encoding.UTF8.GetString(buffer, 0, bytes));
-        }
-        while (!data.ToString().EndsWith("EOF\r\n"));
-        Console.WriteLine($"Data from client: {data}");
-        string responce = "By\r\n";
-        var responceData = Encoding.UTF8.GetBytes(responce);
-        stream.Write(responceData, 0, responceData.Length);
-        tcpClient.Close();
+            Console.WriteLine("Connected");
+            var stream = tcpClient.GetStream();
+             var buffer = new byte[1024];
+            var data = new StringBuilder();
+            int bytes = 0;
+            do
+            {
+                bytes = stream.Read(buffer, 0, buffer.Length);
+                data.Append(Encoding.UTF8.GetString(buffer, 0, bytes));
+            }
+            while (!data.ToString().EndsWith("EOF\r\n"));
+            Console.WriteLine($"Data from client: {data}");
+            string responce = "By\r\n";
+            var responceData = Encoding.UTF8.GetBytes(responce);
+            stream.Write(responceData, 0, responceData.Length);
+            tcpClient.Close(); 
+
+        });
+
+
+ 
     }
 });
 
