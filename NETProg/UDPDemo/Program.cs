@@ -7,7 +7,7 @@ using System.Text;
 var udpServer = Task.Run(() =>
 {
     UdpClient udpClient = new UdpClient();
-    var endPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 10000);
+    var endPoint = new IPEndPoint(IPAddress.Any, 10000);
     udpClient.Client.Bind(endPoint);
     while (true)
     {
@@ -30,7 +30,8 @@ var udpClient = Task.Run(() =>
     for (int i = 0; i < 10; i++)
     {
         udpClient.Send(message, message.Length, "localhost", 10000);
-        udpClient.Send(message, message.Length, "255.255.255.255", 10000); //broadcast
+        var message2 = Encoding.UTF8.GetBytes("Hello from client (Brodcast)");
+        udpClient.Send(message2, message2.Length, "255.255.255.255", 10000); //broadcast
         Thread.Sleep(1000);
     }
 });
