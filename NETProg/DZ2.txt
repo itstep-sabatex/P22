@@ -1,1 +1,1 @@
-https://github.com/itstep-sabatex/P22/blob/master/NETProg/NetProgHomeworkSocket.md
+https://github.com/itstep-sabatex/P22/blob/master/NETProg/NetProgHomeworkTCP-UDP.md
