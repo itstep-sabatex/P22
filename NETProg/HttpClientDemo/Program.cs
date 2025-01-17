@@ -21,20 +21,20 @@ using System.Net.Http.Json;
 
 var client = new HttpClient();
 client.BaseAddress = new Uri("https://sabatex.francecentral.cloudapp.azure.com");
-var login = new { clientId = new Guid("2a2c2a72-0ecb-4369-8e1e-c84be1f201ee"), password = "Aa1234567890-=" };
+var login = new { clientId = new Guid("2a2c2a72-0ecb-4369-8e1e-c84be1f201ee"), password = "12121212" };
 
-var responce = await client.PostAsJsonAsync("api/v0/login", login); // POST https://sabatex.francecentral.cloudapp.axure.com/api/auth/login
+var responce = await client.PostAsJsonAsync("api/v1/login", login); // POST https://sabatex.francecentral.cloudapp.axure.com/api/auth/login
 
 if (responce.IsSuccessStatusCode)
 {
     var content = await responce.Content.ReadAsStringAsync();
     Token token =System.Text.Json.JsonSerializer.Deserialize<Token>(content);
     client.DefaultRequestHeaders.Add("clientId", "2a2c2a72-0ecb-4369-8e1e-c84be1f201ee");
-    client.DefaultRequestHeaders.Add("destinationId", "2a2c2a72-0ecb-4369-8e1e-c84be1f201ef");
+    client.DefaultRequestHeaders.Add("destinationId", "c8a41470-25d3-4f2e-9dc6-1cb9955587d1");
     client.DefaultRequestHeaders.Add("apiToken", token.AccessToken);
 
-    var objectValue = new {objectType= "Test", objectId = "1",text="Hello from client1" };
-    var responce2 = await client.PostAsJsonAsync("api/v0/objects", objectValue); // POST https://sabatex.francecentral.cloudapp.axure.com/api/object
+    var objectValue = new {messageHeader= "Test",message="Hello from client1", dateStamp=DateTime.Now };
+    var responce2 = await client.PostAsJsonAsync("api/v1/objects", objectValue); // POST https://sabatex.francecentral.cloudapp.axure.com/api/object
     if (responce2.IsSuccessStatusCode)
     {
         var content2 = await responce2.Content.ReadAsStringAsync();
