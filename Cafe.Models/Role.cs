@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cafe.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Role
     {
         public int Id { get; set; }
