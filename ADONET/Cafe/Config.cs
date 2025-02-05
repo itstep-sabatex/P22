@@ -1,4 +1,5 @@
 ﻿using Cafe.Data;
+using Cafe.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -45,6 +46,10 @@ namespace Cafe
             using (var context = GetDbContext())
             {
                 context.Database.Migrate();
+                string ob = System.Text.Json.JsonSerializer.Serialize(new User());
+                // це на рызних системах
+                var d = System.Text.Json.JsonSerializer.Deserialize<User>(ob); //
+
             }
         }
 
