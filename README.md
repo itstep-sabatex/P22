@@ -8,3 +8,4 @@
 - [Владислав Ніколайчук] (https://github.com/YanamiYokico/TelegramClientProject)
 - [Матвій Бобровницький] (https://github.com/MBobrovniskiy/Project-for-STEP)
 - [Віталій Костюкевич] (https://github.com/Vitalikpley/Exami)
+- [Віталій Закусило](https://github.com/vzakysillo/Luminaria)
